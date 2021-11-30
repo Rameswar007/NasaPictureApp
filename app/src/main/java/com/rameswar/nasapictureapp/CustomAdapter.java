@@ -40,31 +40,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    /*if (position==0 )
-                    {
-                        *//*recyclerView.setVisibility(View.GONE);
-                        videoView.setVisibility(View.GONE);
-                        imageView.setVisibility(View.VISIBLE);*//*
-                        zoomImageFromThumb(holder.image, uri);
-                    }
-                    else if(position==1 )
-                    {
-                        zoomImageFromThumb(holder.image, uri);
-                    }
-                    else if(position==2 )
-                    {
-
-                    }
-                    else if(position==3 )
-                    {
-
-                    }
-                    else if(position==4 )
-                    {
-
-                    }*/
-                    //zoomImageFromThumb(holder.image, uri);
-
+                    
                 }
             });
         }
