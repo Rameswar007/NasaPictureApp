@@ -1,6 +1,8 @@
 package com.rameswar.nasapictureapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +17,9 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
     ArrayList<NasaData> list;
-        Context context;
-        public CustomAdapter(Context context, ArrayList<NasaData> list) {
-            this.context = context;
+        Activity activity;
+        public CustomAdapter(Activity activity, ArrayList<NasaData> list) {
+            this.activity = activity;
             this.list = list;
         }
         @Override
@@ -36,11 +38,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                     .load(data.getUrl())
                     .resize(90, 90)
                     .centerCrop()
-                    .into(holder.image);;
+                    .into(holder.image);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    
+                    Intent intent = new Intent(activity,FullImageActivity.class);
+                    intent.putExtra("position",position);
+                    activity.startActivity(intent);
                 }
             });
         }
